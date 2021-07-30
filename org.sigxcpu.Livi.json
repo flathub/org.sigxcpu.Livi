@@ -123,6 +123,7 @@
             "config-opts": [
                 "-Daom=disabled",
                 "-Ddoc=disabled",
+                "-Dexamples=disabled",
                 "-Dv4l2codecs=enabled",
                 "--libdir=lib"
             ],
@@ -170,6 +171,7 @@
                 "-Ddoc=disabled",
                 "-Dtests=false",
                 "-Dexamples=false",
+                "-Dvapi=false",
                 "--libdir=lib"
             ],
             "sources": [
@@ -179,7 +181,7 @@
                     "url": "https://gitlab.gnome.org/GNOME/libadwaita.git"
                 }
             ]
-	},
+        },
         {
             "name" : "livi",
             "builddir" : true,
@@ -188,8 +190,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/agx/livi",
-                    "tag" : "v0.0.1.flathub0",
-                    "commit" : "b0ff352f2555e363a2d389dfef61ccd2fc650be8"
+                    "tag" : "v0.0.2",
+                    "commit" : "156fad2d95283ab08c5926fb07fb450f10123598"
                 }
             ]
         }
