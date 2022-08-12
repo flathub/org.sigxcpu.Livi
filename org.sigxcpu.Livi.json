@@ -1,7 +1,7 @@
 {
     "app-id" : "org.sigxcpu.Livi",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "40",
+    "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
     "command" : "livi",
     "finish-args" : [
@@ -40,146 +40,52 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://download.videolan.org/pub/x264/snapshots/x264-snapshot-20191103-2245-stable.tar.bz2",
-                    "sha256": "d74f8f819104a94b0bd075aae39652b1957bcdd460e09b5202582c86e95a5bc0"
+                    "url": "https://download.videolan.org/pub/x264/snapshots/x264-snapshot-20191217-2245.tar.bz2",
+                    "sha256": "0bb67d095513391e637b3b47e8efc3ba4603c3844f1b4c2690f4d36da7763055"
                 }
             ]
         },
-        {
-            "name" : "gudev",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dtests=disabled",
-                "-Dintrospection=disabled"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "tag" : "236",
-                    "commit": "e4a0b196615690e4c1910af3cd57872af4f8e2ec",
-                    "url" : "https://gitlab.gnome.org/GNOME/libgudev.git"
-                }
-            ]
-        },
+        "shared-modules/gudev/gudev.json",
         {
             "name": "gstreamer",
             "buildsystem": "meson",
-            "builddir": true,
             "config-opts": [
-                "-Ddoc=disabled",
-                "--libdir=lib"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "tag": "1.19.1",
-                    "commit": "6fa03dd1515ff980f3d06e4c0b92555d47b34c40",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git"
-                }
-            ]
-        },
-        {
-            "name": "gst-plugins-base",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Ddoc=disabled",
-                "-Dexamples=disabled",
-                "-Dorc=enabled",
+                "--buildtype=release",
+                "--wrap-mode=nodownload",
                 "--libdir=lib",
-                "--wrap-mode=nodownload"
-            ],
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "tag": "1.19.1",
-                    "commit": "36a01da1f8df14d77db47f704a22d8dbd91afd62",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git"
-                }
-            ]
-        },
-        {
-            "name": "gst-plugins-good",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "-Ddoc=disabled",
+
+                "-Dbase=enabled",
+                "-Dgood=enabled",
+                "-Dbad=enabled",
+                "-Dugly=disabled",
+                "-Dgst-examples=disabled",
+                "-Dqt5=disabled",
+                "-Dtests=disabled",
                 "-Dexamples=disabled",
-                "--libdir=lib"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "tag": "1.19.1",
-                    "commit": "0dcb2aaadc803dec4e0808745d98b3377bfe6b04",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-good.git"
-                }
-            ]
-        },
-        {
-            "name": "gst-plugins-bad",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "-Daom=disabled",
-                "-Ddoc=disabled",
-                "-Dexamples=disabled",
-                "-Dv4l2codecs=enabled",
-                "--libdir=lib"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "tag": "1.19.1",
-                    "commit": "6d9125f01c115b13f3e525f9508ee98c4307499c",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad.git"
-                },
-                {
-                    "type": "patch",
-                    "path": "build-aux/0001-play-Emit-correct-signal.patch"
-                }
-            ]
-        },
-        {
-          "name" : "libsass",
-          "buildsystem" : "meson",
-          "sources" : [
-            {
-              "type" : "git",
-              "url" : "https://github.com/lazka/libsass.git",
-              "commit": "302397c0c8ae2d7ab02f45ea461c2c3d768f248e"
-            }
-          ]
-        },
-        {
-          "name" : "sassc",
-          "buildsystem" : "meson",
-          "sources" : [
-            {
-              "type" : "git",
-              "url" : "https://github.com/lazka/sassc.git",
-              "commit": "82803377c33247265d779af034eceb5949e78354"
-            }
-          ]
-        },
-        {
-            "name": "libadwaita",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
                 "-Dintrospection=disabled",
                 "-Ddoc=disabled",
-                "-Dtests=false",
-                "-Dexamples=false",
-                "-Dvapi=false",
-                "--libdir=lib"
+                "-Dgtk_doc=disabled",
+
+                "-Dgst-plugins-base:orc=enabled",
+
+                "-Dgst-plugins-bad:aom=disabled",
+                "-Dgst-plugins-bad:v4l2codecs=enabled"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "commit": "3aa34feae01ebac9492ff46eb9c00a500934895d",
-                    "url": "https://gitlab.gnome.org/GNOME/libadwaita.git"
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+                    "tag": "1.20.3",
+                    "disable-submodules": true
                 }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/*.la",
+                "/lib/gstreamer-1.0/*.la",
+                "/lib/gstreamer-1.0/include",
+                "/lib/pkgconfig",
+                "/share/gtk-doc"
             ]
         },
         {
