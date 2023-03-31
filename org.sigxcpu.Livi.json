@@ -96,9 +96,9 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/agx/livi",
-                    "tag" : "v0.0.2",
-                    "commit" : "156fad2d95283ab08c5926fb07fb450f10123598"
+                    "url" : "https://gitlab.gnome.org/guidog/livi",
+                    "tag" : "v0.0.3",
+                    "commit" : "718a0177b6a8c758155f7936546735e531cd5804"
                 }
             ]
         }
