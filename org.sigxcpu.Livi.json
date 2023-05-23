@@ -97,8 +97,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/guidog/livi",
-                    "tag" : "v0.0.3",
-                    "commit" : "718a0177b6a8c758155f7936546735e531cd5804"
+                    "tag" : "v0.0.4",
+                    "commit" : "cadb69ecd8ddc07d077e97d7029713340a2edcb2"
                 }
             ]
         }
