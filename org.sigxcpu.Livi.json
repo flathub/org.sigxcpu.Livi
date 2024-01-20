@@ -1,7 +1,7 @@
 {
     "app-id" : "org.sigxcpu.Livi",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "44",
+    "runtime-version" : "45",
     "sdk" : "org.gnome.Sdk",
     "command" : "livi",
     "finish-args" : [
@@ -75,8 +75,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "tag": "1.20.6",
-                    "commit": "b7d3037cca2fe72c5b7daab5e0617e61ae013dcc",
+                    "tag": "1.22.8",
+                    "commit": "4af14db10e8355f980bbf79733af004e59d255fc",
                     "disable-submodules": true
                 }
             ],
@@ -97,8 +97,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/guidog/livi",
-                    "tag" : "v0.0.3",
-                    "commit" : "718a0177b6a8c758155f7936546735e531cd5804"
+                    "tag" : "v0.0.6",
+                    "commit" : "8c73da4959db7e5291a64fda108ff1e26c0eac35"
                 }
             ]
         }
