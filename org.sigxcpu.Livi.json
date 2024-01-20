@@ -10,7 +10,8 @@
         "--share=network",
         "--socket=pulseaudio",
         "--socket=wayland",
-        "--filesystem=xdg-videos"
+        "--filesystem=xdg-videos",
+        "--env=GST_PLUGIN_FEATURE_RANK=v4l2slvp9dec:0"
     ],
     "cleanup" : [
         "/include",
