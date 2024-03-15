@@ -1,7 +1,7 @@
 {
     "app-id" : "org.sigxcpu.Livi",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "45",
+    "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",
     "command" : "livi",
     "finish-args" : [
@@ -10,8 +10,9 @@
         "--share=network",
         "--socket=pulseaudio",
         "--socket=wayland",
-        "--filesystem=xdg-videos",
-        "--env=GST_PLUGIN_FEATURE_RANK=v4l2slvp9dec:0"
+        "--socket=fallback-x11",
+        "--filesystem=xdg-download:ro",
+        "--filesystem=xdg-videos:ro"
     ],
     "cleanup" : [
         "/include",
@@ -76,8 +77,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "tag": "1.22.8",
-                    "commit": "4af14db10e8355f980bbf79733af004e59d255fc",
+                    "branch": "1.24",
+                    "commit": "db6803bd55ae4d0789cc520f8563bd1fc8980eb4",
                     "disable-submodules": true
                 }
             ],
@@ -98,8 +99,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/guidog/livi",
-                    "tag" : "v0.0.6",
-                    "commit" : "8c73da4959db7e5291a64fda108ff1e26c0eac35"
+                    "tage" : "0.1.0",
+                    "commit" : "2995b99d079b9310d794eaeee8c2e849ed69f31f"
                 }
             ]
         }
