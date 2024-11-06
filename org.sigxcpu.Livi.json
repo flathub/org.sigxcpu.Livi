@@ -1,7 +1,7 @@
 {
     "app-id" : "org.sigxcpu.Livi",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
+    "runtime-version" : "47",
     "sdk" : "org.gnome.Sdk",
     "command" : "livi",
     "finish-args" : [
@@ -77,8 +77,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "tag": "1.24.4",
-                    "commit": "9137f539a022ec3f5f7c5ee704198dbf35a41940",
+                    "tag": "1.24.9",
+                    "commit": "b309f90bfde36e6d175b70bfa0c941f2829dd6a5",
                     "disable-submodules": true
                 }
             ],
