@@ -77,8 +77,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "tag": "1.24.9",
-                    "commit": "b309f90bfde36e6d175b70bfa0c941f2829dd6a5",
+                    "tag": "1.24.11",
+                    "commit": "c0491f96b58a19d637ce0314cf062deba013d455",
                     "disable-submodules": true
                 }
             ],
@@ -99,8 +99,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/guidog/livi",
-                    "tag" : "v0.2.0",
-                    "commit" : "cdba7c74909b8575f20740728a917ff5356b2007"
+                    "tag" : "v0.3.0",
+                    "commit" : "271b0fbd21d03333d5935d185d75726d10203ab2"
                 }
             ]
         }
