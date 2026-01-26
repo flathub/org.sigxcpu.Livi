@@ -5,6 +5,7 @@
     "sdk" : "org.gnome.Sdk",
     "command" : "livi",
     "finish-args" : [
+        "--env=GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/codecs-extra/lib/gstreamer-1.0:/usr/lib/x86_64-linux-gnu/gstreamer-1.0",
         "--device=all",
         "--share=ipc",
         "--share=network",
@@ -25,72 +26,8 @@
         "*.la",
         "*.a"
     ],
-    "build-options": {
-        "env": {
-             "GST_PLUGIN_SYSTEM_PATH": "/app/lib/gstreamer-1.0/"
-        }
-    },
     "modules" : [
-          {
-            "name": "x264",
-            "config-opts": [
-                "--enable-shared",
-                "--enable-static",
-                "--enable-pic",
-                "--disable-lavf"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.videolan.org/pub/x264/snapshots/x264-snapshot-20191217-2245.tar.bz2",
-                    "sha256": "0bb67d095513391e637b3b47e8efc3ba4603c3844f1b4c2690f4d36da7763055"
-                }
-            ]
-        },
         "shared-modules/gudev/gudev.json",
-        {
-            "name": "gstreamer",
-            "buildsystem": "meson",
-            "config-opts": [
-                "--buildtype=release",
-                "--wrap-mode=nodownload",
-                "--libdir=lib",
-
-                "-Dbase=enabled",
-                "-Dgood=enabled",
-                "-Dbad=enabled",
-                "-Dugly=disabled",
-                "-Dgst-examples=disabled",
-                "-Dqt5=disabled",
-                "-Dtests=disabled",
-                "-Dexamples=disabled",
-                "-Dintrospection=disabled",
-                "-Ddoc=disabled",
-                "-Dgtk_doc=disabled",
-
-                "-Dgst-plugins-base:orc=enabled",
-
-                "-Dgst-plugins-bad:aom=disabled",
-                "-Dgst-plugins-bad:v4l2codecs=enabled"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "tag": "1.26.4",
-                    "commit": "b079b40877776aef8e2d3bf1e3892433ba200163",
-                    "disable-submodules": true
-                }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/*.la",
-                "/lib/gstreamer-1.0/*.la",
-                "/lib/gstreamer-1.0/include",
-                "/lib/pkgconfig",
-                "/share/gtk-doc"
-            ]
-        },
         {
             "name" : "livi",
             "builddir" : true,
