@@ -5,7 +5,6 @@
     "sdk" : "org.gnome.Sdk",
     "command" : "livi",
     "finish-args" : [
-        "--env=GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/codecs-extra/lib/gstreamer-1.0:/usr/lib/x86_64-linux-gnu/gstreamer-1.0",
         "--device=all",
         "--share=ipc",
         "--share=network",
