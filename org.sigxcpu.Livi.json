@@ -47,7 +47,6 @@
                 }
             ]
         },
-        "shared-modules/gudev/gudev.json",
         {
             "name": "gstreamer",
             "buildsystem": "meson",
