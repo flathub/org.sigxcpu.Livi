@@ -22,8 +22,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/guidog/livi",
-                    "tag" : "v0.5.0",
-                    "commit" : "5e134cf06e0801c0c7c6bec3bf07267ae27e925d"
+                    "tag" : "v0.6.0",
+                    "commit" : "f2495d35be437a9c9f2a80019a2f608a42c59da9"
                 }
             ]
         }
